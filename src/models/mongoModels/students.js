@@ -37,6 +37,10 @@ const studentModel = new mongoose.Schema({
         type: Number,
         required: true
     },
+    gender : {
+        type: String,
+        required: true
+    }
     
 })
 module.exports = mongoose.model("Students", studentModel)
