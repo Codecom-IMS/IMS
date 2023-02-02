@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const StudentSchema = mongoose.Schema({
     roll_number: {
-        type: String,
+        type: Number,
         required: true,
     },
     student_name: {
@@ -17,20 +17,28 @@ const StudentSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    others: String,
-    doa: {
+    others: Number,
+    date_of_admission: {
         type: String,
         required: true,
     },
-    dob: { type: String, required: true },
+    date_of_birth: { type: String, required: true },
     class: {
         type: String,
         required: true,
     },
     basic_fee: {
-        type: String,
+        type: Number,
         required: true,
+    },
+    gender: {
+        type: String,
+        required: true
+    },
+    status:{
+        type: String,
+        required: true
     }
 })
 
-module.exports = mongoose.model('Student', StudentSchema)
+module.exports = mongoose.model('Students', StudentSchema)
