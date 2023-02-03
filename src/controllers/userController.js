@@ -1,9 +1,9 @@
 const attendanceModel = require("../models/mongoModels/attendance");
 const studentModel = require("../models/mongoModels/students");
 class UserController {
-  static async getStudents(req, res) {
+  static async getOneStudentAttendance(req, res) {
     let { roll_num, start_date, end_date } = req.body;
-    let searchedStudent = ""
+    let searchedStudent = []
     if(!start_date){
         start_date = end_date
     }
@@ -11,35 +11,43 @@ class UserController {
       if (err) {
         console.log(err);
         throw err;
-      } else {
-        const std_grade = student[0].class
-        console.log(student);
+      } 
+      else {
+        const newStudent = student[0]
+        const std_grade = newStudent.class
         console.log(std_grade);
-        console.log(start_date,end_date)
         attendanceModel.find({ class: std_grade,
-            date : {$gte : start_date,$lte : end_date} },(err, studentFromAttendance) => {
-            if (err) {
+            date : {$gte : start_date,$lte : end_date} },
+            (err, studentFromAttendance) => {
+            if (err){
               console.log(err);
               throw err;
-            } else {
+            }
+            else{
               studentFromAttendance.forEach((obj) =>{
-                console.log(obj)
                 const newObj = obj.att
-                console.log(newObj);
-                for(let prop in newObj){
-                    console.log(prop)
-                    if(prop == roll_num){
-                        console.log(prop)
-                        // searchedStudent = {key= prop : value= newObj[prop]}
-                        // console.log(searchedStudent)
+                for(let i=0;i<newObj.length;i++){
+                  console.log(newObj[i])
+                  if(newObj[i][0]==roll_num){
+                    const stdObj = {
+                      date : obj.date,
+                      student_name :newStudent.student_name,
+                      father_name : newStudent.father_name,
+                      class : newStudent.class,
+                      attendance : newObj[i][1]
                     }
+                    searchedStudent.push(stdObj)
+                  }
                 }
               })
+              console.log(searchedStudent);
+              res.status(201).send( searchedStudent )
             }
           }
         );
       }
     });
+  }
     // const classStudents = await attendanceModel.find({class : grade})
     // if(roll_num){
     //     classStudents.map((student) => {
@@ -50,7 +58,6 @@ class UserController {
     //     res.status(201).json({ Student: searchedStudent })
     // }
     // res.status(201).json({ Students: classStudents })
-  }
 
   // if(c){
   //     if()
@@ -69,8 +76,37 @@ class UserController {
     // const feeReport =
     res.send("Fee report generated");
   }
-  static attendanceReport(req, res) {
-    res.send("Attendance Report generated");
+  static async getClassAttendance(req, res) {
+    let {std_grade, start_date, end_date} = req.body
+    let searchedStudent = []
+    if(!start_date){
+      start_date = end_date
+    }
+    attendanceModel.find({class : std_grade,
+      date : {$gte : start_date,$lte : end_date}},
+      (err, studentFromAttendance)=>{
+        if(err){
+          console.log(err);
+          throw err;
+        }
+        else{
+          studentFromAttendance.forEach((obj, index)=>{
+            // console.log(obj.att);
+            const newObj ={
+              date : obj.date,
+              class : obj.class,
+              att : []
+            }
+            for(let i=0;i<obj.att.length;i++){
+              newObj.att.push(obj.att[i])
+            }
+            console.log(newObj);
+            searchedStudent.push(newObj)
+          })
+    res.status(201).send(searchedStudent)
+
+        }
+    })
   }
 }
 

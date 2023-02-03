@@ -3,8 +3,8 @@ const UserController = require('../controllers/userController');
 const routes = require('express').Router;
 const Router = routes();
 
-Router.get('/getStudents', UserController.getStudents);
+Router.get('/getOneStudentAttendance', UserController.getOneStudentAttendance);
 Router.get('/feeReport', UserController.feeReport);
-Router.get('/attendanceReport', UserController.attendanceReport);
+Router.get('/getClassAttendance', UserController.getClassAttendance);
 
 module.exports = Router

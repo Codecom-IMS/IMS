@@ -34,7 +34,7 @@ const studentModel = new mongoose.Schema({
         required: true
     },
     class : {
-        type: Number,
+        type: String,
         required: true
     },
     gender : {

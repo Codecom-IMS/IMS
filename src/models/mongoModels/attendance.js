@@ -14,7 +14,7 @@ const attendanceModel = new mongoose.Schema({
         required: true
     },
     att : {
-        type: Map,
+        type: Array,
         required: true
     }
     
