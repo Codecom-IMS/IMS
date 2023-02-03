@@ -1,6 +1,4 @@
-const { getAllStudentsFromDB, addStudentToDB, updateStudentDataInDB, deleteStudentFromDB } = require("../app/repositories/student");
-const {getAllTeachersFromDB, addTeacherToDB} = require("../app/repositories/teacher");
-const { addStudentData, updateStudentData, deleteStudentData, getStudents } = require("../app/services/student");
+const { addStudentData, updateStudentData, deleteStudentData, getStudents, updateStudentsFeeStatus } = require("../app/services/student");
 const { getTeachers, addTeacherData, updateTeacherData, deleteTeacherData } = require("../app/services/teacher");
 
 
@@ -11,14 +9,12 @@ const getStudent = async (req, res) => {
 
 const addStudent = async (req, res) => {
     const status = await addStudentData(req);
-    console.log(status)
     if (status) {
         res.status(200).send({ status: 'Student Successfully' });
     } else {
         res.status(500).send({ status: 'Something Went Wrong' });
     }
 }
-
 const updateStudent = async (req, res) => {
     const status = await updateStudentData(req);
     if (status) { 
@@ -26,6 +22,14 @@ const updateStudent = async (req, res) => {
     }
     else {
         res.status(500).send({ status: 'done' });
+    }
+}
+const updateFeeStatus = async ()=>{
+    const status = await updateStudentsFeeStatus();
+    if(status){
+        console.log("fee status Updated");
+    }else{
+        console.log("An error occured while updating fee status")
     }
 }
 
@@ -68,4 +72,4 @@ const deleteTeacher = async (req,res)=>{
     }
 }
 
-module.exports = { getStudent, addStudent, updateStudent, deleteStudent,getTeacher,addTeacher,updateTeacher,deleteTeacher }
+module.exports = { getStudent, addStudent, updateStudent,updateFeeStatus, deleteStudent,getTeacher,addTeacher,updateTeacher,deleteTeacher }

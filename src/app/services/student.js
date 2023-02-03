@@ -1,4 +1,4 @@
-const { getStudentsFromDB, addStudentToDB, updateStudentDataInDB, deleteStudentFromDB } = require("../repositories/student")
+const { getStudentsFromDB, addStudentToDB, updateStudentDataInDB, deleteStudentFromDB, updateStudentsFeeStatusInDB} = require("../repositories/student")
 
 
 const getStudents = async (apiRequest)=>{
@@ -16,10 +16,12 @@ const updateStudentData = async (apiRequest)=>{
     const rollNumber = apiRequest.params.rollNumber;
     return await updateStudentDataInDB(newData,rollNumber);
 }
-
+const updateStudentsFeeStatus = async ()=>{
+    return await updateStudentsFeeStatusInDB();
+}
 const deleteStudentData = async (apiRequest)=>{
     const rollNumber = apiRequest.query.roll_number;
     return await deleteStudentFromDB(rollNumber);
 }
 
-module.exports = {getStudents,addStudentData,updateStudentData,deleteStudentData}
+module.exports = {getStudents,addStudentData,updateStudentData,updateStudentsFeeStatus,deleteStudentData}

@@ -9,7 +9,7 @@ const addStudentToDB = async (studentData)=>{
 
     try{
         const creatStudent = Student(studentData);
-        const temp = await creatStudent.save();
+        await creatStudent.save();
         return true;
     } catch(e){
         console.log(e);
@@ -26,6 +26,16 @@ const updateStudentDataInDB = async (newData,roll_number)=>{
     }
     
 }
+const updateStudentsFeeStatusInDB = async ()=>{
+    try{
+        const feeStatus = {fee_status:'upaid'};
+        await Student.updateMany({},feeStatus);
+        return true;
+    } catch(e){
+        console.log(e);
+        return false;
+    }
+}
 const deleteStudentFromDB = async (roll_number)=>{
     try{
         const updatedStatus = {status:"inactive"}
@@ -37,4 +47,4 @@ const deleteStudentFromDB = async (roll_number)=>{
     }
 }
 
-module.exports = {getStudentsFromDB, addStudentToDB,updateStudentDataInDB,deleteStudentFromDB};
+module.exports = {getStudentsFromDB, addStudentToDB,updateStudentDataInDB,updateStudentsFeeStatusInDB,deleteStudentFromDB};

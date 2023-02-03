@@ -17,12 +17,18 @@ const StudentSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    others: Number,
+    others: {
+        type: Number,
+        required: true
+    },
     date_of_admission: {
         type: String,
         required: true,
     },
-    date_of_birth: { type: String, required: true },
+    date_of_birth: {
+        type: String,
+        required: true
+    },
     class: {
         type: String,
         required: true,
@@ -35,7 +41,11 @@ const StudentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    status:{
+    fee_status: {
+        type: String,
+        required: true
+    },
+    status: {
         type: String,
         required: true
     }
