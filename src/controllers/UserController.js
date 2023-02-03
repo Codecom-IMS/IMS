@@ -1,65 +1,29 @@
 const Students = require("../models/mongoModels/students");
 const Attendance = require("../models/mongoModels/attendance");
 const UserService = require("../app/services/userService");
+const DateFormat = require("../utils/validators/dateformat");
 class UserController {
   static async getAllStudents(req, res) {
     const grade = req.body.class;
-    try{
+    try {
       const response = await UserService.getStudents(grade);
-      res.send(response)
-    }catch(error)
-    {
-      throw error
+      res.send(response);
+    } catch (error) {
+      throw error;
     }
   }
-  static addnewAttendance(req, res) {
+  static async addnewAttendance(req, res) {
     const grade = req.body.class;
-    Students.find(
-      { class: grade },
-      { roll_number: 1, _id: 0 },
-      (err, students) => {
-        if (err) {
-          console.log(err);
-          throw err;
-        } else {
-          const attendance = students.map((value) => value.roll_number);
-          const attendances = ["P", "A"];
-          attendance.forEach((id, index) => {
-            attendance[index] = [
-              id,
-              attendances[Math.floor(Math.random() * 2)],
-            ];
-          });
-          const obj = Object.fromEntries(attendance);
-          Attendance.find({}, (err, totalAttendance) => {
-            if (err) {
-              console.log(err);
-              throw err;
-            } else {
-              const dateobj = new Date();
-
-              const day = dateobj.getDate();
-              const month = dateobj.getMonth() + 1;
-              const year = dateobj.getFullYear();
-              const attendanceDetails = {
-                att_id: totalAttendance.length + 1,
-                date: `${year}-${month}-${day}`,
-                class: grade,
-                att: attendance,
-              };
-              Attendance.insertMany(attendanceDetails, (err, students) => {
-                if (err) {
-                  console.log(err);
-                  throw err;
-                } else {
-                  res.send("Operation Successfull");
-                }
-              });
-            }
-          });
-        }
-      }
-    );
+    const students = await UserService.addNewAttendance(grade);
+    const result = await UserService.generateAttendance(students);
+    const totalAttendance = await UserService.getTotalAttendance();
+    await UserService.insertAttendance({
+      att_id: totalAttendance.length + 1,
+      date: DateFormat(),
+      class: grade,
+      att: result,
+    });
+    res.send("Operation Succesfull")
   }
   static editAttendance(req, res) {
     const details = {
