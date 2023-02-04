@@ -10,7 +10,7 @@ class UserService {
       throw error;
     }
   }
-  static async addNewAttendance(className, status) {
+  static async getRollNumbers(className, status) {
     try {
       const result = await UserRepository.getRollNumbers(className, status);
       return result;
@@ -37,6 +37,21 @@ class UserService {
   static async insertAttendance(attendanceDetails) {
     try {
       await UserRepository.insertAttendance(attendanceDetails);
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async editAttendance(details, attendance) {
+    try {
+      await UserRepository.editAttendance(details, attendance);
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async getAttendance(className, date) {
+    try {
+      const result = await UserRepository.getAttendance(className, date);
+      return result;
     } catch (error) {
       throw error;
     }

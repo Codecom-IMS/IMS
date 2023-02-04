@@ -1,70 +1,82 @@
 const Students = require("../models/mongoModels/students");
 const Attendance = require("../models/mongoModels/attendance");
 const UserService = require("../app/services/userService");
-const DateFormat = require("../utils/validators/dateformat");
+const DateFormat = require("../utils/dateformat");
+const ResultValidator = require("../utils/validators/resultValidator");
+const { ResponseMessages, Statuses } = require("../constants/constants");
 class UserController {
   static async getAllStudents(req, res) {
-    const grade = req.body.class;
+    const className = req.body.class;
     try {
-      const response = await UserService.getStudents(grade);
-      res.send(response);
+      const response = await UserService.getStudents(
+        className,
+        Statuses.active
+      );
+      const validation = await ResultValidator(response);
+      validation
+        ? res.json({ message: ResponseMessages.success, body: response })
+        : res.json({ message: ResponseMessages.invalid });
     } catch (error) {
-      throw error;
+      res.send(ResponseMessages.error);
     }
   }
   static async addnewAttendance(req, res) {
-    const grade = req.body.class;
-    const students = await UserService.addNewAttendance(grade);
+    const className = req.body.class;
+    const students = await UserService.getRollNumbers(
+      className,
+      Statuses.active
+    );
     const result = await UserService.generateAttendance(students);
     const totalAttendance = await UserService.getTotalAttendance();
-    await UserService.insertAttendance({
-      att_id: totalAttendance.length + 1,
-      date: DateFormat(),
-      class: grade,
-      att: result,
-    });
-    res.send("Operation Succesfull")
+    const validation = ResultValidator(students);
+    if (validation) {
+      await UserService.insertAttendance({
+        att_id: totalAttendance.length + 1,
+        date: DateFormat(),
+        class: grade,
+        att: result,
+      });
+      res.json({ message: ResponseMessages.success });
+    } else {
+      res.json({ message: ResponseMessages.invalid });
+    }
   }
-  static editAttendance(req, res) {
-    const details = {
-      class: req.body.class,
-      date: req.body.date,
-    };
-    Students.find({ details }, (err, students) => {
-      if (err) {
-        console.log(err);
-        throw err;
+  static async editAttendance(req, res) {
+    try {
+      const details = {
+        class: req.body.class,
+        date: req.body.date,
+      };
+      const students = await UserService.getRollNumbers(
+        details.class,
+        Statuses.active
+      );
+      const attendance = await UserService.generateAttendance(students);
+      const validation = await ResultValidator(students);
+      if (validation) {
+        await UserService.editAttendance(details, attendance);
+        res.json({ message: ResponseMessages.success });
       } else {
-        const attendance = students.map((value) => value.roll_number);
-        const attendances = ["P", "A"];
-        attendance.forEach((id, index) => {
-          attendance[index] = [id, attendances[Math.floor(Math.random() * 2)]];
-        });
-        const obj = Object.fromEntries(attendance);
-        Attendance.updateOne(
-          { details },
-          { $set: { att: attendance } },
-          (err, result) => {
-            if (err) {
-              throw err;
-            } else {
-              res.send("Operation Successfull");
-            }
-          }
-        );
+        res.json({ message: ResponseMessages.invalid });
       }
-    });
+    } catch (error) {
+      res.json({ message: ResponseMessages.error });
+    }
   }
-  static getAttendance(req, res) {
-    Attendance.find({}, (err, attendance) => {
-      if (err) {
-        console.log(err);
-        throw err;
-      } else {
-        console.log(attendance);
-        res.send(attendance);
-      }
-    });
+  static async getAttendance(req, res) {
+    try {
+      const details = { class: req.body.class, date: req.body.date };
+      const attendance = await UserService.getAttendance(
+        details.class,
+        details.date
+      );
+      const validation = await ResultValidator(attendance);
+      validation
+        ? res.json({ message: ResponseMessages.success, body: attendance })
+        : res.json({ message: ResponseMessages.invalid });
+    } catch (error) {
+      res.json({ message: ResponseMessages.error });
+    }
   }
 }
 module.exports = UserController;

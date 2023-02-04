@@ -3,6 +3,7 @@ class Userfactory {
     const result = object.map((document) => [
       document.roll_number,
       document.student_name,
+      document.father_name,
     ]);
     return result;
   }
@@ -10,10 +11,7 @@ class Userfactory {
     const result = object.map((value) => value.roll_number);
     const attendances = ["P", "A"];
     result.forEach((id, index) => {
-      result[index] = [
-        id,
-        attendances[Math.floor(Math.random() * 2)],
-      ];
+      result[index] = [id, attendances[Math.floor(Math.random() * 2)]];
     });
     return result;
   }
