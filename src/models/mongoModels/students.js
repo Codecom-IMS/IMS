@@ -25,11 +25,11 @@ const studentModel = new mongoose.Schema({
         type: Number,
         required: true
     },
-    dob : {
+    date_of_birth : {
         type: String,
         required: true
     },
-    doa : {
+    date_of_admission : {
         type: String,
         required: true
     },
@@ -38,6 +38,14 @@ const studentModel = new mongoose.Schema({
         required: true
     },
     gender : {
+        type: String,
+        required: true
+    },
+    fee_status : {
+        type: String,
+        required: true
+    },
+    status : {
         type: String,
         required: true
     }

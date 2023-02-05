@@ -1,112 +1,70 @@
 const attendanceModel = require("../models/mongoModels/attendance");
 const studentModel = require("../models/mongoModels/students");
+const feeDetails = require("../models/mongoModels/fee");
+const userService = require("../app/services/userService");
+const ResultValidator = require("../utils/validators/resultValidator");
+const { ResponseMessages, Statuses } = require("../constants/constants");
+
 class UserController {
   static async getOneStudentAttendance(req, res) {
     let { roll_num, start_date, end_date } = req.body;
-    let searchedStudent = []
-    if(!start_date){
-        start_date = end_date
+    try {
+      const response = await userService.getOneStudentsAttendance(
+        roll_num,
+        start_date,
+        end_date
+      );
+      const validation = ResultValidator(response);
+      validation
+        ? res.json({ message: ResponseMessages.success, body: response })
+        : res.json({ message: ResponseMessages.invalid });
+    } catch (error) {
+      res.send(ResponseMessages.error);
     }
-    studentModel.find({ roll_number: roll_num }, (err, student) => {
-      if (err) {
-        console.log(err);
-        throw err;
-      } 
-      else {
-        const newStudent = student[0]
-        const std_grade = newStudent.class
-        console.log(std_grade);
-        attendanceModel.find({ class: std_grade,
-            date : {$gte : start_date,$lte : end_date} },
-            (err, studentFromAttendance) => {
-            if (err){
-              console.log(err);
-              throw err;
-            }
-            else{
-              studentFromAttendance.forEach((obj) =>{
-                const newObj = obj.att
-                for(let i=0;i<newObj.length;i++){
-                  console.log(newObj[i])
-                  if(newObj[i][0]==roll_num){
-                    const stdObj = {
-                      date : obj.date,
-                      student_name :newStudent.student_name,
-                      father_name : newStudent.father_name,
-                      class : newStudent.class,
-                      attendance : newObj[i][1]
-                    }
-                    searchedStudent.push(stdObj)
-                  }
-                }
-              })
-              console.log(searchedStudent);
-              res.status(201).send( searchedStudent )
-            }
-          }
-        );
-      }
-    });
   }
-    // const classStudents = await attendanceModel.find({class : grade})
-    // if(roll_num){
-    //     classStudents.map((student) => {
-    //         if(student.att.key == roll_num) {
-    //         searchedStudent = student
-    //         }
-    //     })
-    //     res.status(201).json({ Student: searchedStudent })
-    // }
-    // res.status(201).json({ Students: classStudents })
 
-  // if(c){
-  //     if()
-  // }
-
-  // const students = await studentModel.find({
-  //     dob: {
-  //         $gte: "2000-1-1",
-  //         $lt: "2013-9-20"
-  //     }
-  // })
-  // res.status(201).json({ Students: students })
-
-  static feeReport(req, res) {
-    // const { month, student} = req.body
-    // const feeReport =
-    res.send("Fee report generated");
-  }
   static async getClassAttendance(req, res) {
-    let {std_grade, start_date, end_date} = req.body
-    let searchedStudent = []
-    if(!start_date){
-      start_date = end_date
+    let { std_grade, start_date, end_date } = req.body;
+    try {
+      const response = await userService.getStudentAttByClass(std_grade,
+        start_date,
+        end_date
+      );
+      const validation = ResultValidator(response);
+      validation
+        ? res.json({ message: ResponseMessages.success, body: response })
+        : res.json({ message: ResponseMessages.invalid });
+    } catch (error) {
+    res.send(ResponseMessages.error);
     }
-    attendanceModel.find({class : std_grade,
-      date : {$gte : start_date,$lte : end_date}},
-      (err, studentFromAttendance)=>{
-        if(err){
-          console.log(err);
-          throw err;
-        }
-        else{
-          studentFromAttendance.forEach((obj, index)=>{
-            // console.log(obj.att);
-            const newObj ={
-              date : obj.date,
-              class : obj.class,
-              att : []
-            }
-            for(let i=0;i<obj.att.length;i++){
-              newObj.att.push(obj.att[i])
-            }
-            console.log(newObj);
-            searchedStudent.push(newObj)
-          })
-    res.status(201).send(searchedStudent)
+  }
+       
 
-        }
-    })
+  static async getOneStudentFeeReport(req, res) {
+    let { roll_num, start_date, end_date } = req.body;
+    try {
+      const response = await userService.getOneStudentFeeReport(roll_num, start_date, end_date);
+      const validation = ResultValidator(response);
+      validation
+        ? res.json({ message: ResponseMessages.success, body: response })
+        : res.json({ message: ResponseMessages.invalid });
+    } catch (error) {
+    res.send(ResponseMessages.error);
+    }
+    
+  }
+  static async getWholeClassFeeReport(req, res) {
+    let { std_grade, start_date, end_date } = req.body;
+    try {
+      const response = await userService.getWholeClassFeeReport(std_grade, start_date, end_date);
+      const validation = ResultValidator(response);
+      validation
+        ? res.json({ message: ResponseMessages.success, body: response })
+        : res.json({ message: ResponseMessages.invalid });
+    } catch (error) {
+    res.send(ResponseMessages.error);
+    }
+    
   }
 }
 

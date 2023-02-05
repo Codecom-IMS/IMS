@@ -33,9 +33,6 @@ const feeDetails = new mongoose.Schema({
         type: String
         // required: true
     },
-    class : {
-        type: Number
-    }
     
 })
 module.exports = mongoose.model("Fee_Detail", feeDetails)
