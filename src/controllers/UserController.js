@@ -1,74 +1,53 @@
 const student = require("../models/students");
 const feeDetail = require("../models/fee_details");
+const UserServices = require("../app/services/userServices");
 class UserController {
-  static getFeeDetails(req, res) {
-    var rollNumberToFind = "15";
-    student.find(
-      { roll_number: rollNumberToFind },
-      { student_name: 1, roll_number: 1, basic_fee: 1, others: 1 },
-      (error, result) => {
-        if (error) throw error;
-        res.send(result);
-      }
-    );
+  static async getSudentFeeDetails(req, res) {
+    try {
+      var rollNumberToFind = req.body.roll_number;
+      const studentDetails = await UserServices.getSudentFeeDetails(
+        rollNumberToFind
+      );
+      const PrevArrears = await UserServices.getPrevArrears(rollNumberToFind);
+      res.send({ studentDetails, PrevArrears });
+    } catch (error) {
+      throw error;
+    }
   }
-  static postFee(req, res) {
-    var rollNumberToFind = "4";
-    feeDetail.find(
-      { student_id: rollNumberToFind },
-      { arrears: 1 },
-      (error, feeDetailResult) => {
-        if(!feeDetailResult){
-          console.log(error);
-          feeDetailResult = {arrears : 0}
-          
-        }
-        student.find(
-          { roll_number: rollNumberToFind },
-          { student_name: 1, roll_number: 1, basic_fee: 1, others: 1 },
-          (error, studentResult) => {
-            const details = {
-              id: req.body.id,
-              student_name: studentResult[0].student_name,
-              student_id: studentResult[0].roll_number,
-              basic_fee: studentResult[0].basic_fee,
-              current_paid_fee: req.body.current_paid_fee,
-              others: studentResult[0].others,
-              arrears: req.body.arrears,
-              date: req.body.date,
-            };
-            if(lastarrears){
-            const fee = parseInt(details.basic_fee);
-            const others = parseInt(details.others);
-            const lastarrears = parseInt(feeDetailResult[feeDetailResult.length - 1].arrears);
-            let totalAmountToPay = fee + others + lastarrears ;
-            console.log(totalAmountToPay)
-            details.arrears = totalAmountToPay - details.current_paid_fee
-            console.log(details.arrears)
 
-            console.log(lastarrears);}
-            else{
-              const fee = parseInt(details.basic_fee);
-            const others = parseInt(details.others);
-            let totalAmountToPay = fee + others  ;
-            console.log(totalAmountToPay)
-            details.arrears = totalAmountToPay - details.current_paid_fee
-            console.log(details.arrears)
-
-
-            
-
-            }
-                                  
-            if (error) throw error;
-            feeDetail.insertMany(details, (error, result) => {
-              if (error) throw error;
-              res.send("operation succesfull");
-            });
-          }
-        );
-      }
+  static async addFee(req, res) {
+    var rollNumberToFind = req.body.roll_number;
+    const PrevArrears = await UserServices.getPrevArrears(rollNumberToFind);
+    const studentDetails = await UserServices.getSudentFeeDetails(
+      rollNumberToFind
     );
+    const totalLength = await UserServices.totalLength();
+    const details = {
+      id: totalLength,
+      student_name: studentDetails[0].student_name,
+      student_id: studentDetails[0].roll_number,
+      basic_fee: studentDetails[0].basic_fee,
+      current_paid_fee: req.body.current_paid_fee,
+      others: studentDetails[0].others,
+      class: studentDetails[0].class,
+      date: req.body.date,
+    };
+    if (PrevArrears) {
+      const fee = parseInt(details.basic_fee);
+      const others = parseInt(details.others);
+      const lastarrears = parseInt(PrevArrears.arrears);
+      let totalAmountToPay = fee + others + lastarrears;
+      details.arrears = totalAmountToPay - details.current_paid_fee;
+      res.send("fee Added 1");
+    } else {
+      const fee = parseInt(details.basic_fee);
+      const others = parseInt(details.others);
+      let totalAmountToPay = fee + others;
+      details.arrears = totalAmountToPay - details.current_paid_fee;
+      res.send("fee added 2 ");
+    }
+    await UserServices.updateStudentStatus(rollNumberToFind);
+    await UserServices.pushFeeDetails(details);
   }
 }
 module.exports = UserController;

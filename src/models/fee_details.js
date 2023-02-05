@@ -29,7 +29,7 @@ const feeDetails = new mongoose.Schema({
     required: true,
   },
   class: {
-    type: Number,
+    type: String,
   },
 });
 module.exports = mongoose.model(`fee_details`, feeDetails);
