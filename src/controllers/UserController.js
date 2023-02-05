@@ -14,7 +14,7 @@ class UserController {
         className,
         Statuses.active
       );
-      const validation = await ResultValidator(response);
+      const validation = ResultValidator(response);
       validation
         ? res.json({
             status: statusCodes.success,
@@ -67,7 +67,7 @@ class UserController {
         Statuses.active
       );
       const attendance = await UserService.generateAttendance(students);
-      const validation = await ResultValidator(students);
+      const validation = ResultValidator(students);
       if (validation) {
         await UserService.editAttendance(details, attendance);
         res.json({
@@ -91,7 +91,7 @@ class UserController {
         details.class,
         details.date
       );
-      const validation = await ResultValidator(attendance);
+      const validation = ResultValidator(attendance);
       validation
         ? res.json({
             status: statusCodes.success,

@@ -1,4 +1,3 @@
-const { getAttendance } = require("../../controllers/userController");
 const Attendance = require("../../models/mongoModels/attendance");
 const Students = require("../../models/mongoModels/students");
 class UserRepository {
