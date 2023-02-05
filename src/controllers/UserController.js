@@ -1,9 +1,11 @@
-const Students = require("../models/mongoModels/students");
-const Attendance = require("../models/mongoModels/attendance");
 const UserService = require("../app/services/userService");
 const DateFormat = require("../utils/dateformat");
 const ResultValidator = require("../utils/validators/resultValidator");
-const { ResponseMessages, Statuses } = require("../constants/constants");
+const {
+  ResponseMessages,
+  Statuses,
+  statusCodes,
+} = require("../constants/constants");
 class UserController {
   static async getAllStudents(req, res) {
     const className = req.body.class;
@@ -14,8 +16,15 @@ class UserController {
       );
       const validation = await ResultValidator(response);
       validation
-        ? res.json({ message: ResponseMessages.success, body: response })
-        : res.json({ message: ResponseMessages.invalid });
+        ? res.json({
+            status: statusCodes.success,
+            message: ResponseMessages.success,
+            body: response,
+          })
+        : res.json({
+            status: statusCodes.notFound,
+            message: ResponseMessages.invalid,
+          });
     } catch (error) {
       res.send(ResponseMessages.error);
     }
@@ -33,12 +42,18 @@ class UserController {
       await UserService.insertAttendance({
         att_id: totalAttendance.length + 1,
         date: DateFormat(),
-        class: grade,
+        class: className,
         att: result,
       });
-      res.json({ message: ResponseMessages.success });
+      res.json({
+        status: statusCodes.success,
+        message: ResponseMessages.success,
+      });
     } else {
-      res.json({ message: ResponseMessages.invalid });
+      res.json({
+        status: statusCodes.notFound,
+        message: ResponseMessages.invalid,
+      });
     }
   }
   static async editAttendance(req, res) {
@@ -55,9 +70,15 @@ class UserController {
       const validation = await ResultValidator(students);
       if (validation) {
         await UserService.editAttendance(details, attendance);
-        res.json({ message: ResponseMessages.success });
+        res.json({
+          status: statusCodes.success,
+          message: ResponseMessages.success,
+        });
       } else {
-        res.json({ message: ResponseMessages.invalid });
+        res.json({
+          status: statusCodes.notFound,
+          message: ResponseMessages.invalid,
+        });
       }
     } catch (error) {
       res.json({ message: ResponseMessages.error });
@@ -72,8 +93,15 @@ class UserController {
       );
       const validation = await ResultValidator(attendance);
       validation
-        ? res.json({ message: ResponseMessages.success, body: attendance })
-        : res.json({ message: ResponseMessages.invalid });
+        ? res.json({
+            status: statusCodes.success,
+            message: ResponseMessages.success,
+            body: attendance,
+          })
+        : res.json({
+            status: statusCodes.notFound,
+            message: ResponseMessages.invalid,
+          });
     } catch (error) {
       res.json({ message: ResponseMessages.error });
     }
