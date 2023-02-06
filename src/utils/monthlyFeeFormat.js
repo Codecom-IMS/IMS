@@ -1,7 +1,7 @@
-const { updateFee } = require("../controllers/UserController")
+const { updateFee } = require("../controllers/UserController");
 
-const updateAllStudentsFee = async ()=>{
-    await updateFee();
-}
+const updateAllStudentsFee = async () => {
+  await updateFee();
+};
 
-module.exports = {updateAllStudentsFee}
+module.exports = { updateAllStudentsFee };

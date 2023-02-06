@@ -4,4 +4,3 @@ const Router = routes();
 Router.get("/feeDetails", UserController.getSudentFeeDetails);
 Router.post("/addFee", UserController.addFee);
 module.exports = Router;
-

@@ -47,13 +47,12 @@ class UserServices {
       throw error;
     }
   }
-    static async  updateStudentsFee (){
-    try{
-    return await UserRepository.updateStudentsFeeInDB()}
-    catch(error){
-        throw error;
+  static async updateStudentsFee() {
+    try {
+      return await UserRepository.updateStudentsFeeInDB();
+    } catch (error) {
+      throw error;
     }
-}
-  
+  }
 }
 module.exports = UserServices;

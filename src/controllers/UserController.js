@@ -38,7 +38,7 @@ class UserController {
       const newDetails = ifArrearsExists(PrevArrears, details);
       await UserServices.updateStudentStatus(rollNumberToFind);
       await UserServices.pushFeeDetails(newDetails);
-      res.json({status: 200, message: "Operation Succesfull"})
+      res.json({ status: 200, message: "Operation Succesfull" });
     } catch (error) {
       throw error;
     }
