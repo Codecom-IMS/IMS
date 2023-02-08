@@ -1,0 +1,2 @@
+{"level":"info","message":"Retrieved admin details with email allis@gmail.org","service":"teacher-service"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"teacher-service"}

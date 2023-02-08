@@ -1,6 +1,6 @@
 const app = require("./expressApp");
 
-const adminRoutes = require("../routes/admin");
+const adminRoutes = require("../routes/admin"); 
 const teacherRoutes = require("../routes/teacher");
 
 app.use("/api/admin/", adminRoutes);
