@@ -3,15 +3,14 @@ const AdminService = require("../app/services/adminServices");
 const Authentication = require("../middlewares/authentication");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 const config = require("../config/config");
 const validateAdmin = require("../utils/validators/adminValidator");
-console.log(config);
 const ACCESS_TOKEN_SECRET = config.secret;
-console.log(ACCESS_TOKEN_SECRET);
+// console.log(ACCESS_TOKEN_SECRET);
 exports.getAllAdmins = async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log('userCredentials',email,password)
     const admins = await AdminService.getAllAdmins(email, password);
     if (admins.status == 200) {
       res.json({
@@ -25,7 +24,6 @@ exports.getAllAdmins = async (req, res) => {
     res.status(500).send("Server Error");
   }
 };
-
 
 
 

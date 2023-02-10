@@ -2,8 +2,8 @@ const jwt = require("jsonwebtoken");
 const config = require("../../config/config");
 const ACCESS_TOKEN_SECRET = config.secret;
 
-class AdminFactory {
-  static async getAllAdmins(data) {
+class TeacherFactory {
+  static async getAllTeachers(data) {
     try {
       if (data) {
         console.log(data);
@@ -11,9 +11,9 @@ class AdminFactory {
         return {
           status: 200,
           token,
-          id:data.id,
-          admin_name: data.admin_name,
-          adminId: data.id,
+          id:data._id,
+          teacher_name: data.teacher_name,
+          teacherId: data.id,
           email: data.email,
         };
       } else {
@@ -26,4 +26,4 @@ class AdminFactory {
   }
 }
 
-module.exports = AdminFactory;
+module.exports = TeacherFactory;

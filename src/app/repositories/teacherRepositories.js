@@ -1,28 +1,17 @@
-const jwt = require("jsonwebtoken");
-const config = require("../../config/config");
-const ACCESS_TOKEN_SECRET = config.secret;
-
-class AdminFactory {
-  static async getAllAdmins(data) {
-    try {
-      if (data) {
-        console.log(data);
-        const token = jwt.sign(data.email, ACCESS_TOKEN_SECRET);
-        return {
-          status: 200,
-          token,
-          admin_name: data.admin_name,
-          adminId: data.id,
-          email: data.email,
-        };
-      } else {
-        const respose = { status: 404, message: "Invalid Email or Password" };
-        return respose;
-      }
-    } catch (error) {
-      throw error;
-    }
+const mongoose = require("mongoose");
+const Teachers= require("../../models/mongoModel/teachers")
+const logger=require("../../utils/logger")
+class TeacherRepository {
+  static async getAllTeachers(email, password) {
+  try {
+  const result = await Teachers.find({ email, password });
+  logger.info(`Retrieved Teacher details with email ${email}`);
+  return result[0];
+  } catch (error) {
+  logger.error(`Error retrieving Teacher details with email ${email} - ${error}`);
+  throw error;
   }
-}
-
-module.exports = AdminFactory;
+  }
+  }
+  
+  module.exports = TeacherRepository;

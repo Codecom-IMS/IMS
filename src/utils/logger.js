@@ -4,8 +4,12 @@ const { transports, createLogger, format } = require('winston');
 
 const logger = winston.createLogger({
 level: 'info',
-format: format.combine(format.timestamp(), format.json()),
-format: winston.format.json(),
+format: format.combine(format.timestamp({
+    format: 'dddd, DD-MM-YYYY HH:mm:ss A'
+    // format:'dddd, MMMM Do YYYY, h:mm:ss a'
+
+}), format.json()),
+// format: winston.format.json(),
 defaultMeta: { service: 'IMS-Services' },
 transports: [
 new winston.transports.File({ filename: 'error.log', level: 'error' }),
