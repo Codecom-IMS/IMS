@@ -1,27 +1,29 @@
-const { getStudentsFromDB, addStudentToDB, updateStudentDataInDB, deleteStudentFromDB, updateStudentsFeeStatusInDB} = require("../repositories/student")
+const {StudentRepository} = require("../repositories/student")
 
 
-const getStudents = async (apiRequest)=>{
-    const rollNumber = apiRequest.query.roll_number;
-    return await getStudentsFromDB(rollNumber);
+class StudentServices{
+    static getStudents = async (apiRequest)=>{
+        const rollNumber = apiRequest.query.roll_number;
+        return await StudentRepository.getStudentsFromDB(rollNumber);
+    }
+    
+    static addStudentData = async (apiRequest)=>{
+        const studentData = apiRequest.body;
+        return await StudentRepository.addStudentToDB(studentData);
+    }
+    
+    static updateStudentData = async (apiRequest)=>{
+        const newData = apiRequest.body;
+        const rollNumber = apiRequest.params.rollNumber;
+        return await StudentRepository.updateStudentDataInDB(newData,rollNumber);
+    }
+    static updateStudentsFeeStatus = async ()=>{
+        return await StudentRepository.updateStudentsFeeStatusInDB();
+    }
+    static deleteStudentData = async (apiRequest)=>{
+        const rollNumber = apiRequest.query.roll_number;
+        return await StudentRepository.deleteStudentFromDB(rollNumber);
+    }
 }
 
-const addStudentData = async (apiRequest)=>{
-    const studentData = apiRequest.query;
-    return await addStudentToDB(studentData);
-}
-
-const updateStudentData = async (apiRequest)=>{
-    const newData = apiRequest.query;
-    const rollNumber = apiRequest.params.rollNumber;
-    return await updateStudentDataInDB(newData,rollNumber);
-}
-const updateStudentsFeeStatus = async ()=>{
-    return await updateStudentsFeeStatusInDB();
-}
-const deleteStudentData = async (apiRequest)=>{
-    const rollNumber = apiRequest.query.roll_number;
-    return await deleteStudentFromDB(rollNumber);
-}
-
-module.exports = {getStudents,addStudentData,updateStudentData,updateStudentsFeeStatus,deleteStudentData}
+module.exports = {StudentServices}
