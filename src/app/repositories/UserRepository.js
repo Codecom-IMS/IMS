@@ -12,6 +12,7 @@ class UserRepository {
           roll_number: 1,
           basic_fee: 1,
           others: 1,
+          class :1
         }
       );
       return details;
