@@ -1,13 +1,14 @@
-const config = require('./config/config');
-const app = require('./server/expressApp');
+const config = require('./config/config.js');
+const app = require('./server/expressApp.js');
 const server = require('http').Server(app);
 require('./server/routes');
 
 const nodeSchedule = require('node-schedule');
 const { updateAllStudentsFeeStatus } = require('./utils/student');
+const logger = require('./utils/logger');
 
 server.listen(config.port,()=>{
-    console.log('listening')
+    logger.info("Backend Server Started")
 });
 nodeSchedule.scheduleJob('1 08 1 */1 *',async ()=>{
     await updateAllStudentsFeeStatus();

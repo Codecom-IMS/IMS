@@ -1,4 +1,4 @@
-const Connection = require('./connection');
+const Connection = require('./connection.js');
 const cors = require('cors');
 const express = require('express');
 const app = express();

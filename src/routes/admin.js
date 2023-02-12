@@ -1,7 +1,6 @@
-const {AdminControllers} = require('../controllers/admin');
+const AdminControllers = require('../controllers/adminController');
 
 const adminRoutes = require("express").Router();
-// const teacherRoutes = require('express').Router();
 
 adminRoutes.get('/getStudents',AdminControllers.getStudent);
 adminRoutes.put('/updateStudent/:rollNumber',AdminControllers.updateStudent);
@@ -14,4 +13,4 @@ adminRoutes.put('/updateTeacher/:id',AdminControllers.updateTeacher);
 adminRoutes.delete('/deleteTeacher',AdminControllers.deleteTeacher);
 
 
-module.exports = {adminRoutes};
+module.exports = adminRoutes;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const StudentSchema = mongoose.Schema({
+const studentModel = mongoose.Schema({
     roll_number: {
         type: Number,
         required: true,
@@ -51,4 +51,4 @@ const StudentSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Students', StudentSchema)
+module.exports = mongoose.model('Students', studentModel)

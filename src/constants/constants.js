@@ -1,0 +1,13 @@
+const API_STATUS_CODES = {
+    SUCCESS: 200,
+    NOT_FOUND: 404,
+    ERROR_CODE: 400,
+    INTERNAL_SERVER_ERROR: 500
+}
+
+const RESPONSE_MESSAGES = {
+    AUTHORIZATION_FAILED: "Authorization Failed",
+    ERROR_MESSAGE: "Something Went Wrong"
+}
+
+module.exports = {API_STATUS_CODES,RESPONSE_MESSAGES}
