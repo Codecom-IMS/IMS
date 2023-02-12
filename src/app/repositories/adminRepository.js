@@ -3,6 +3,7 @@ const Teacher = require("../../models/MongoModel/teachers");
 const logger = require("../../utils/logger");
 const ifArrearsExists = require("../../utils/if_arrears_exists");
 const fee_details = require("../../models/MongoModel/fee_details");
+const Admin = require("../../models/mongoModel/admins");
 
 class AdminRepository {
   static getStudentsFromDB = async (rollNumber) => {
@@ -197,6 +198,18 @@ class AdminRepository {
       }
     } catch (error) {
       return false;
+    }
+  }
+   static async adminLogin(email, password) {
+    try {
+      const result = await Admin.find({ email, password });
+      logger.info(`Retrieved admin details with email ${email}`);
+      return result[0];
+    } catch (error) {
+      logger.error(
+        `Error retrieving admin details with email ${email} - ${error}`
+      );
+      throw error;
     }
   }
 }

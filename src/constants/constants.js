@@ -1,19 +1,26 @@
 const API_STATUS_CODES = {
   SUCCESS: 200,
   NOT_FOUND: 404,
-  DUPLICATE_ENTRY: 409,
+  AUTHORIZATION_FAILED: 401,
+  ERROR_CODE: 400,
+  INTERNAL_SERVER_ERROR: 500,
+   DUPLICATE_ENTRY: 409,
   INTERNAL_SERVER_ERROR: 500,
 };
 const RESPONSE_MESSAGES = {
-  SUCCESS: "Operation Succesfull",
-  ERROR: "Couldn't Perform The Operation",
+  SUCCESS: "Operation Successful",
+  AUTHORIZATION_FAILED: "Authorization failed",
   INVALID: "Data Not Found",
+  ERROR: "Couldn't Perform The Operation",
   DUPLICATE: "Duplicate Entry",
-  AUTHORIZATION_FAILED: "Authorization Failed",
   ERROR_MESSAGE: "Something Went Wrong",
 };
 const STATUSES = {
   ACTIVE: "active",
   INACTIVE: "inactive",
 };
-module.exports = { RESPONSE_MESSAGES, STATUSES, API_STATUS_CODES };
+
+const ACCESS_TOKEN_SECRET =
+  "678f6a3db6bb457d279942049663b2af6b8de319652b64d6ab5b3d695cb9c8ea9f2133e2920e837497d3fb7c831ef6d6043735b3d695cb9c8ea9f2133e2920e8890ffff670d99a1a9a3a43683";
+
+module.exports = { API_STATUS_CODES, RESPONSE_MESSAGES, ACCESS_TOKEN_SECRET, STATUSES, };

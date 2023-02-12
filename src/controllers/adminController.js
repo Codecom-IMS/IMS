@@ -152,6 +152,23 @@ class AdminControllers {
       logger.error(`${status.error}An error occured while updating fee`);
     }
   }
+  static async adminLogin(req, res) => {
+  try {
+    const { email, password } = req.body;
+    console.log("userCredentials", email, password);
+    const admins = await AdminService.adminLogin(email, password);
+    if (admins.status == 200) {
+      res.json({
+        data: admins,
+      });
+    } else {
+      res.json({ admins });
+    }
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
+};
 }
 
 module.exports = AdminControllers;

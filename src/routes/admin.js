@@ -14,5 +14,7 @@ adminRoutes.delete("/deleteTeacher", AdminControllers.deleteTeacher);
 
 adminRoutes.get("/feeDetails", AdminControllers.getSudentFeeDetails);
 adminRoutes.post("/feeDetails", AdminControllers.addFee);
+adminRoutes.post("/login", AdminControllers.adminLogin);
+
 
 module.exports = adminRoutes;

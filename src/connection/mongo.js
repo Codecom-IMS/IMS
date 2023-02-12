@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const logger = require("../utils/logger");
+mongoose.set("strictQuery", false);
 
 const mongoConnection = () => {
   const userName = "Codecom_IMS";
