@@ -1,9 +1,9 @@
-const Attendance = require("../../models/mongoModels/attendance");
-const Students = require("../../models/mongoModels/students");
+const Attendance = require("../../models/MongoModel/attendance");
+const Student = require("../../models/MongoModel/students");
 class UserRepository {
   static async getStudents(className, status) {
     try {
-      const result = await Students.find({ class: className, status });
+      const result = await Student.find({ class: className, status });
       return result;
     } catch (error) {
       throw error;
@@ -11,7 +11,7 @@ class UserRepository {
   }
   static async getRollNumbers(className, status) {
     try {
-      const result = await Students.find(
+      const result = await Student.find(
         { class: className, status },
         { roll_number: 1, _id: 0 }
       );
