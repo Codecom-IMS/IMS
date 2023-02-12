@@ -1489,3 +1489,138 @@
 {"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:31:43 AM"}
 {"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:32:36 AM"}
 {"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:32:36 AM"}
+{"level":"info","message":"Retrieved Teacher details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:41:37 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:41:37 AM"}
+{"level":"info","message":"Retrieved Teacher details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:19 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:19 AM"}
+{"level":"info","message":"Retrieved Teacher details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:19 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:19 AM"}
+{"level":"info","message":"Retrieved Teacher details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:20 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:20 AM"}
+{"level":"info","message":"Retrieved Teacher details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:20 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:20 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:33 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:42:33 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:43:02 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:43:02 AM"}
+{"level":"info","message":"Retrieved Teacher details with email techer@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:43:41 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:43:41 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:44:15 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:44:15 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:44:37 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:44:37 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:45:17 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:45:17 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:47:53 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:47:53 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:48:31 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:48:31 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:48:52 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:48:52 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:49:23 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:49:23 AM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:50:13 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 00:50:13 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 17:33:21 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 17:33:22 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 17:58:51 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 17:58:51 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 18:08:44 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 18:08:44 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:20:48 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:20:48 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:20:59 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:20:59 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:21:21 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:21:21 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:21:41 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:21:41 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:23:46 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:23:46 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:31:34 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:31:34 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:31:52 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:31:52 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:32:14 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:32:14 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:32:25 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:32:25 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:32:44 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:32:44 PM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:44:43 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 21:44:43 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:03:40 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:03:40 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:12:30 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:12:30 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:37:03 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:37:03 PM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:39:43 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:39:43 PM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:41:32 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:41:32 PM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:41:55 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:41:55 PM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:42:30 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:42:30 PM"}
+{"level":"info","message":"Retrieved Teacher details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:42:45 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:42:45 PM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:03 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:03 PM"}
+{"level":"info","message":"Retrieved Teacher details with email teachers@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:13 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:13 PM"}
+{"level":"info","message":"Retrieved Teacher details with email teacher@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:18 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:18 PM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:31 PM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:31 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:41 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:43:41 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:47:48 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 22:47:48 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 23:09:12 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 23:09:12 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 23:13:45 PM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Saturday, 11-02-2023 23:13:45 PM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:28:23 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:28:23 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:28:52 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:28:52 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:29:25 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:29:25 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:29:45 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:29:45 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:30:15 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:30:15 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:31:04 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:31:04 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:31:46 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:31:46 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:48:21 AM"}
+{"level":"info","message":"AdminService.getAllAdmins: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:48:21 AM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:49:24 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 00:49:24 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 01:25:50 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 01:25:54 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 01:30:59 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Services","timestamp":"Sunday, 12-02-2023 01:31:15 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:40:35 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:41:19 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:41:45 AM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:41:53 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:41:53 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:42:26 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:44:58 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:32 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:36 AM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:37 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:37 AM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:50 AM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:56 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 01:48:56 AM"}
+{"level":"info","message":"Retrieved Teacher details with email undefined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:05:53 AM"}
+{"level":"info","message":"Teacher Services: [object Object]","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:05:53 AM"}
+{"level":"info","message":"userCredentials","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"info","message":"Retrieved admin details with email admin@gmail.com","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"error","message":"Error retrieving admin ","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"error","message":"AdminService.getAllAdmins: ReferenceError: respose is not defined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"error","message":"respose is not defined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}

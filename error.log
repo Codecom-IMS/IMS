@@ -1,30 +1,13 @@
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: 'hgasfdhg@gmail.com', password: '`112' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: 'hgasfdhg@gmail.com', password: '`112' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: '', password: '12112' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: '', password: '12112' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: 'allis@gmail.org', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: 'allis@gmail.org', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: 'ismail@gmail.com', password: '1234asdf' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: 'ismail@gmail.com', password: '1234asdf' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: \"'ismail@gmail.com'\", password: \"'1234asdf'\" }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: \"'ismail@gmail.com'\", password: \"'1234asdf'\" }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: 'ismail@gmail.com', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: 'ismail@gmail.com', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: 'allis@gmail.org', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: 'allis@gmail.org', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{ email: 'allis@gmail.org', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{ email: 'allis@gmail.org', password: '1234' }\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"Error retrieving admin details with email [object Object] - CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: CastError: Cast to string failed for value \"{}\" (type Object) at path \"password\" for model \"Admin\"","service":"IMS-Services"}
-{"level":"error","message":"AdminService.getAllAdmins: Error: payload is required","service":"IMS-Services","timestamp":"Friday, 10-02-2023 17:53:50 PM"}
-{"level":"error","message":"Teacher Services: TypeError: Cannot read properties of undefined (reading 'length')","service":"IMS-Services","timestamp":"Friday, 10-02-2023 23:42:59 PM"}
-{"level":"error","message":"Teacher Services: TypeError: Cannot read properties of undefined (reading 'length')","service":"IMS-Services","timestamp":"Friday, 10-02-2023 23:43:15 PM"}
-{"level":"error","message":"No Teacher found with email undefined","service":"IMS-Services","timestamp":"Friday, 10-02-2023 23:46:07 PM"}
-{"level":"error","message":"Teacher Services: TypeError: Cannot read properties of null (reading 'length')","service":"IMS-Services","timestamp":"Friday, 10-02-2023 23:46:07 PM"}
-{"level":"error","message":"No Teacher found with email undefined","service":"IMS-Services","timestamp":"Friday, 10-02-2023 23:49:34 PM"}
+{"level":"error","message":"Error retrieving admin ","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"error","message":"AdminService.getAllAdmins: ReferenceError: respose is not defined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"error","message":"respose is not defined","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 02:10:17 AM"}
+{"level":"error","message":"Connection with the Mongodb Unsuccesful","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:50:01 AM"}
+{"level":"error","message":"Connection with the Mongodb Unsuccesful","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:53:58 AM"}
+{"level":"error","message":"Connection with the Mongodb Unsuccesful","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:55:41 AM"}
+{"level":"error","message":"Invalid Login","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 06:41:09 AM"}
+{"level":"error","message":"Invalid Login","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 06:42:55 AM"}
+{"level":"error","message":"AdminService.adminLogin: TypeError: AdminRepository.adminLogin is not a function","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 07:01:26 AM"}
+{"level":"error","message":"AdminService.adminLogin: TypeError: AdminRepository.adminLogin is not a function","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 07:03:58 AM"}
+{"level":"error","message":"AdminService.adminLogin: TypeError: AdminRepository.adminLogin is not a function","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 07:04:03 AM"}
+{"level":"error","message":"AdminService.adminLogin: TypeError: AdminRepository.adminLogin is not a function","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 07:05:03 AM"}
+{"level":"error","message":"AdminService.adminLogin: TypeError: AdminRepository.adminLogin is not a function","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 07:07:14 AM"}

@@ -1,20 +1,15 @@
 const TeacherRepository = require("../repositories/teacherRepositories");
 const TeacherFactory = require("../factories/teacherFactories");
-const logger=require("../../utils/logger")
-
-class TeacherService {
-  static async getAllTeachers(email, password) {
+class TeacherServices {
+  static async teacherLogin(email, password) {
     try {
-      const result = await TeacherRepository.getAllTeachers(email, password);
-      const data = await TeacherFactory.getAllTeachers(result);
-  logger.info(`Teacher Services: ${data}`);
-
+      const result = await TeacherRepository.teacherLogin(email, password);
+      const data = await TeacherFactory.teacherLogin(result);
       return data;
     } catch (error) {
-  logger.error(`Teacher Services: ${error}`);
       throw error;
     }
   }
 }
 
-module.exports = TeacherService;
+module.exports = TeacherServices;

@@ -1,18 +1,18 @@
-const Teachers = require("../models/mongoModel/teachers");
 const TeacherService = require("../app/services/teacherServices");
-const Authentication = require("../middlewares/authentication");
 require("dotenv").config();
-const jwt = require("jsonwebtoken");
 const config = require("../config/config");
-const validateAdmin = require("../utils/validators/adminValidator");
-const ACCESS_TOKEN_SECRET = config.secret;
+const {
+  API_STATUS_CODES,
+  RESPONSE_MESSAGES,
+  ACCESS_TOKEN_SECRET,
+} = require("../constants/constants");
 
-exports.getAllTeachers = async (req, res) => {
+exports.teacherLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log('userCredentials',email,password)
-    const teachers = await TeacherService.getAllTeachers(email, password);
-    if (teachers.status == 200) {
+    console.log("userCredentials", email, password);
+    const teachers = await TeacherService.teacherLogin(email, password);
+    if (teachers.status === API_STATUS_CODES.SUCCESS) {
       res.json({
         data: teachers,
       });
@@ -20,7 +20,7 @@ exports.getAllTeachers = async (req, res) => {
       res.json({ teachers });
     }
   } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Server Error");
+    logger.error(RESPONSE_MESSAGES.INVALID);
+    res.status(500).send(API_STATUS_CODES.INTERNAL_SERVER_ERROR);
   }
 };

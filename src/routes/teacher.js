@@ -1,8 +1,7 @@
-const { getAllTeachers ,getAllTeacher} = require("../controllers/teacherController");
+const { teacherLogin } = require("../controllers/teacherController");
 const routes = require("express").Router;
 const Router = routes();
 
-Router.post("/login", getAllTeachers);
-
+Router.post("/login", teacherLogin);
 
 module.exports = Router;

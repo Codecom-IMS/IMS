@@ -1,8 +1,7 @@
-require('dotenv').config();
-// console.log(process.env.ACCESS_TOKEN_SECRET)
+require("dotenv").config();
 const config = {
-    port: process.env.PORT || 5000,
-    secret: process.env.ACCESS_TOKEN_SECRET
+  port: process.env.PORT || 5000,
+  secret: process.env.ACCESS_TOKEN_SECRET,
 };
 
 module.exports = config;

@@ -3,7 +3,7 @@ const config = require("../../config/config");
 const ACCESS_TOKEN_SECRET = config.secret;
 
 class TeacherFactory {
-  static async getAllTeachers(data) {
+  static async teacherLogin(data) {
     try {
       if (data) {
         console.log(data);
@@ -12,7 +12,7 @@ class TeacherFactory {
           status: 200,
           token,
           id:data._id,
-          teacher_name: data.teacher_name,
+          name: data.name,
           teacherId: data.id,
           email: data.email,
         };

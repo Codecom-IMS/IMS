@@ -1,14 +1,10 @@
-const mongoose = require("mongoose");
-const Teachers= require("../../models/mongoModel/teachers")
-const logger=require("../../utils/logger")
+const Teacher= require("../../models/mongoModel/teachers")
 class TeacherRepository {
-  static async getAllTeachers(email, password) {
+  static async teacherLogin(email, password) {
   try {
-  const result = await Teachers.find({ email, password });
-  logger.info(`Retrieved Teacher details with email ${email}`);
+  const result = await Teacher.find({ email, password });
   return result[0];
   } catch (error) {
-  logger.error(`Error retrieving Teacher details with email ${email} - ${error}`);
   throw error;
   }
   }

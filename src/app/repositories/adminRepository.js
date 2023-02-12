@@ -1,8 +1,7 @@
-const mongoose = require("mongoose");
 const Admin = require("../../models/mongoModel/admins");
 const logger=require("../../utils/logger")
 class AdminRepository {
-  static async getAllAdmins(email, password) {
+  static async adminLogin(email, password) {
   try {
   const result = await Admin.find({ email, password });
   logger.info(`Retrieved admin details with email ${email}`);

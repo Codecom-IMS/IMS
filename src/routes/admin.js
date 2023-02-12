@@ -1,7 +1,7 @@
-const { getAllAdmins } = require("../controllers/adminController");
+const {AdminControllers} = require("../controllers/adminController");
 const routes = require("express").Router;
 const Router = routes();
 
-Router.post("/login", getAllAdmins);
+Router.post("/login", AdminControllers);
 
 module.exports = Router;
