@@ -2,8 +2,7 @@ const Student = require("../../models/MongoModel/students");
 const Teacher = require("../../models/MongoModel/teachers");
 const logger = require("../../utils/logger");
 const ifArrearsExists = require("../../utils/if_arrears_exists");
-const fee_details = require("../../models/fee_details");
-
+const fee_details = require("../../models/MongoModel/fee_details");
 
 class AdminRepository {
   static getStudentsFromDB = async (rollNumber) => {
@@ -108,7 +107,7 @@ class AdminRepository {
       return false;
     }
   };
-  
+
   static async getSudentFeeDetails(roll_number) {
     try {
       const details = await Student.find(
@@ -118,7 +117,7 @@ class AdminRepository {
           roll_number: 1,
           basic_fee: 1,
           others: 1,
-          class :1
+          class: 1,
         }
       );
       return details;

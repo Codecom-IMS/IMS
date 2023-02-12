@@ -6,7 +6,7 @@ const feeDetails = new mongoose.Schema({
   },
   student_name: {
     type: String,
-    required : true,
+    required: true,
   },
   student_id: {
     type: Number,
@@ -14,19 +14,19 @@ const feeDetails = new mongoose.Schema({
   },
   basic_fee: {
     type: Number,
-    required : true,
+    required: true,
   },
   others: {
     type: Number,
-    required : true,
+    required: true,
   },
   current_paid_fee: {
     type: Number,
-    required : true,
+    required: true,
   },
   arrears: {
     type: Number,
-    required : true,
+    required: true,
   },
   date: {
     type: String,
@@ -34,7 +34,7 @@ const feeDetails = new mongoose.Schema({
   },
   class: {
     type: String,
-    required : true,
+    required: true,
   },
 });
 module.exports = mongoose.model(`fee_details`, feeDetails);

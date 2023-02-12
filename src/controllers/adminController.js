@@ -2,7 +2,7 @@ const AdminServices = require("../app/services/adminServices");
 const ifArrearsExists = require("../utils/if_arrears_exists");
 const DateFormat = require("../utils/dateFormat");
 const logger = require("../utils/logger");
-const {status} = require("../constants/constant")
+const { status } = require("../constants/constant");
 const {
   API_STATUS_CODES,
   RESPONSE_MESSAGES,
@@ -99,7 +99,7 @@ class AdminControllers {
         .send({ status: RESPONSE_MESSAGES.ERROR_MESSAGE });
     }
   };
-  
+
   static async getSudentFeeDetails(req, res) {
     try {
       let rollNumberToFind = req.query.roll_number;
