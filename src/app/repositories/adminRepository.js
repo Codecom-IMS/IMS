@@ -1,5 +1,7 @@
 const Student = require("../../models/MongoModel/students");
 const Teacher = require("../../models/MongoModel/teachers");
+const attendanceModel = require("../../models/mongoModels/attendance");
+const dateCheck = require("../../utils/dateCheck");
 const logger = require("../../utils/logger");
 const ifArrearsExists = require("../../utils/if_arrears_exists");
 const fee_details = require("../../models/MongoModel/fee_details");
@@ -164,6 +166,55 @@ class AdminRepository {
       throw error;
     }
   }
+  static async getStudentByRollnum(roll_num) {
+    try {
+      const student = await Student.find({ roll_number: roll_num });
+      return student[0];
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async getStudentByClass(std_grade) {
+    try {
+      const student = await Student.find({
+        class: std_grade,
+        status: "active",
+      });
+      return student;
+    } catch (err) {
+      throw err;
+    }
+  }
+  static async getStudentAttByClass(std_grade, start_date, end_date) {
+    try {
+      const new_start_date = await dateCheck(start_date, end_date);
+      const studentFromAttendance = await attendanceModel.find({
+        class: std_grade,
+        date: {
+          $gte: new_start_date,
+          $lte: end_date,
+        },
+      });
+      return studentFromAttendance;
+    } catch (err) {
+      throw err;
+    }
+  }
+  static async getStudentFeeByRollnum(roll_num) {
+    try {
+      const studentFromFee = await fee_details.find({ student_id: roll_num });
+      return studentFromFee;
+      } catch (err) {
+      throw err;
+    }
+  static async getStudentFeeByClass(std_grade) {
+    try {
+      const studentFromFee = await fee_details.find({ class: std_grade });
+      return studentFromFee;
+    } catch (error) {
+    throw error;
+    }
   static async updateStudentsFeeInDB() {
     try {
       const unpaidStudents = await Student.find(
@@ -209,8 +260,7 @@ class AdminRepository {
       logger.error(
         `Error retrieving admin details with email ${email} - ${error}`
       );
-      throw error;
-    }
   }
 }
+
 module.exports = AdminRepository;
