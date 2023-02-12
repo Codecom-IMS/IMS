@@ -62,3 +62,7 @@
 {"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 08:48:58 AM"}
 {"level":"info","message":"Server now listening at localhost:5000","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 08:49:30 AM"}
 {"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 08:49:31 AM"}
+{"level":"info","message":"Server now listening at localhost:5000","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 17:50:35 PM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 17:50:38 PM"}
+{"level":"info","message":"Server now listening at localhost:5000","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 17:53:05 PM"}
+{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 17:53:07 PM"}

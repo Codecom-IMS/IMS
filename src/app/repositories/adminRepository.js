@@ -1,6 +1,6 @@
 const Student = require("../../models/MongoModel/students");
 const Teacher = require("../../models/MongoModel/teachers");
-const attendanceModel = require("../../models/mongoModels/attendance");
+const attendanceModel = require("../../models/MongoModel/attendance");
 const dateCheck = require("../../utils/dateCheck");
 const logger = require("../../utils/logger");
 const ifArrearsExists = require("../../utils/if_arrears_exists");
@@ -205,16 +205,18 @@ class AdminRepository {
     try {
       const studentFromFee = await fee_details.find({ student_id: roll_num });
       return studentFromFee;
-      } catch (err) {
+    } catch (err) {
       throw err;
     }
+  }
   static async getStudentFeeByClass(std_grade) {
     try {
       const studentFromFee = await fee_details.find({ class: std_grade });
       return studentFromFee;
     } catch (error) {
-    throw error;
+      throw error;
     }
+  }
   static async updateStudentsFeeInDB() {
     try {
       const unpaidStudents = await Student.find(
@@ -251,7 +253,7 @@ class AdminRepository {
       return false;
     }
   }
-   static async adminLogin(email, password) {
+  static async adminLogin(email, password) {
     try {
       const result = await Admin.find({ email, password });
       logger.info(`Retrieved admin details with email ${email}`);
@@ -260,6 +262,7 @@ class AdminRepository {
       logger.error(
         `Error retrieving admin details with email ${email} - ${error}`
       );
+    }
   }
 }
 
