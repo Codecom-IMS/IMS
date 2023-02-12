@@ -1,6 +1,6 @@
 const dateCheck = require("../../utils/dateCheck");
-const Student = require("../../models/mongoModels/students")
-const attendanceModel = require("../../models/mongoModels/attendance")
+const Student = require("../../models/mongoModels/students");
+const attendanceModel = require("../../models/mongoModels/attendance");
 const feeModel = require("../../models/mongoModels/feeDetails");
 
 class AdminRepository {
@@ -13,14 +13,17 @@ class AdminRepository {
     }
   }
 
-  static async getStudentByClass(std_grade){
-    try{
-    const student = await Student.find({ class: std_grade ,status: "active"});
-    return student;
-  }catch(err){
-    throw err
+  static async getStudentByClass(std_grade) {
+    try {
+      const student = await Student.find({
+        class: std_grade,
+        status: "active",
+      });
+      return student;
+    } catch (err) {
+      throw err;
+    }
   }
-}
   static async getStudentAttByClass(std_grade, start_date, end_date) {
     try {
       const new_start_date = await dateCheck(start_date, end_date);
@@ -36,20 +39,20 @@ class AdminRepository {
       throw err;
     }
   }
-  static async getStudentFeeByRollnum(roll_num){
+  static async getStudentFeeByRollnum(roll_num) {
     try {
-        const studentFromFee = await feeModel.find({ student_id: roll_num });
-        return studentFromFee;
+      const studentFromFee = await feeModel.find({ student_id: roll_num });
+      return studentFromFee;
     } catch (error) {
-        throw error;
+      throw error;
     }
   }
-  static async getStudentFeeByClass(std_grade){
+  static async getStudentFeeByClass(std_grade) {
     try {
-        const studentFromFee = await feeModel.find({ class: std_grade });
-        return studentFromFee;
+      const studentFromFee = await feeModel.find({ class: std_grade });
+      return studentFromFee;
     } catch (error) {
-        throw error;
+      throw error;
     }
   }
 }

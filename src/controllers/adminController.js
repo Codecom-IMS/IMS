@@ -1,9 +1,9 @@
 const AdminServices = require("../app/services/adminServices");
-const logger =  require("../utils/logger");
+const logger = require("../utils/logger");
 const ResultValidator = require("../utils/validators/resultValidator");
 const {
   RESPONSE_MESSAGES,
-  API_STATUS_CODES, 
+  API_STATUS_CODES,
 } = require("../constants/constants");
 
 class AdminControllers {
@@ -17,7 +17,6 @@ class AdminControllers {
         start_date,
         end_date
       );
-      console.log(response);
       const validation = ResultValidator(response);
       validation
         ? res.json({
@@ -31,8 +30,11 @@ class AdminControllers {
             body: [],
           });
     } catch (error) {
-      res.send(RESPONSE_MESSAGES.ERROR);
-      logger.error(RESPONSE_MESSAGES.ERROR)
+      res.json({
+        status: API_STATUS_CODES.ERROR_CODE,
+        message: RESPONSE_MESSAGES.ERROR,
+      });
+      logger.error(RESPONSE_MESSAGES.ERROR);
     }
   }
 
@@ -46,7 +48,6 @@ class AdminControllers {
         start_date,
         end_date
       );
-      console.log(response);
       const validation = ResultValidator(response);
       validation
         ? res.json({
@@ -60,8 +61,11 @@ class AdminControllers {
             body: [],
           });
     } catch (error) {
-      res.send(RESPONSE_MESSAGES.ERROR);
-      logger.error(RESPONSE_MESSAGES.ERROR)
+      res.json({
+        status: API_STATUS_CODES.ERROR_CODE,
+        message: RESPONSE_MESSAGES.ERROR,
+      });
+      logger.error(RESPONSE_MESSAGES.ERROR);
     }
   }
 
@@ -88,8 +92,11 @@ class AdminControllers {
             body: [],
           });
     } catch (error) {
-      res.send(RESPONSE_MESSAGES.ERROR);
-      logger.error(RESPONSE_MESSAGES.ERROR)
+      res.json({
+        status: API_STATUS_CODES.ERROR_CODE,
+        message: RESPONSE_MESSAGES.ERROR,
+      });
+      logger.error(RESPONSE_MESSAGES.ERROR);
     }
   }
   static async getWholeClassFeeReport(req, res) {
@@ -115,8 +122,11 @@ class AdminControllers {
             body: [],
           });
     } catch (error) {
-      res.send(RESPONSE_MESSAGES.ERROR);
-      logger.error(RESPONSE_MESSAGES.ERROR)
+      res.json({
+        status: API_STATUS_CODES.ERROR_CODE,
+        message: RESPONSE_MESSAGES.ERROR,
+      });
+      logger.error(RESPONSE_MESSAGES.ERROR);
     }
   }
 }
