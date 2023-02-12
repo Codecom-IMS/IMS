@@ -1,12 +1,19 @@
-const UserController = require('../controllers/userController');
+const AdminControllers = require("../controllers/adminController");
 
-const routes = require('express').Router;
-const Router = routes();
+const adminRoutes = require("express").Router();
 
-Router.get('/getOneStudentAttendance', UserController.getOneStudentAttendance);
-Router.get('/getClassAttendance', UserController.getClassAttendance);
-Router.get('/getOneStudentFeeReport', UserController.getOneStudentFeeReport);
-Router.get('/getWholeClassFeeReport', UserController.getWholeClassFeeReport);
+adminRoutes.get(
+  "/getOneStudentAttendance",
+  AdminControllers.getOneStudentAttendance
+);
+adminRoutes.get("/getClassAttendance", AdminControllers.getClassAttendance);
+adminRoutes.get(
+  "/getOneStudentFeeReport",
+  AdminControllers.getOneStudentFeeReport
+);
+adminRoutes.get(
+  "/getWholeClassFeeReport",
+  AdminControllers.getWholeClassFeeReport
+);
 
-
-module.exports = Router
+module.exports = adminRoutes;

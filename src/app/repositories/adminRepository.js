@@ -1,17 +1,26 @@
 const dateCheck = require("../../utils/dateCheck");
-const studentModel = require("../../models/mongoModels/students")
+const Student = require("../../models/mongoModels/students")
 const attendanceModel = require("../../models/mongoModels/attendance")
-const feeModel = require("../../models/mongoModels/fee");
+const feeModel = require("../../models/mongoModels/feeDetails");
 
-class userRepository {
+class AdminRepository {
   static async getStudentByRollnum(roll_num) {
     try {
-      const student = await studentModel.find({ roll_number: roll_num });
+      const student = await Student.find({ roll_number: roll_num });
       return student[0];
     } catch (err) {
       throw err;
     }
   }
+
+  static async getStudentByClass(std_grade){
+    try{
+    const student = await Student.find({ class: std_grade ,status: "active"});
+    return student;
+  }catch(err){
+    throw err
+  }
+}
   static async getStudentAttByClass(std_grade, start_date, end_date) {
     try {
       const new_start_date = await dateCheck(start_date, end_date);
@@ -34,7 +43,6 @@ class userRepository {
     } catch (error) {
         throw error;
     }
-
   }
   static async getStudentFeeByClass(std_grade){
     try {
@@ -46,4 +54,4 @@ class userRepository {
   }
 }
 
-module.exports = userRepository;
+module.exports = AdminRepository;
