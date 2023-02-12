@@ -1,14 +1,17 @@
-const statusCodes = {
-  success: 200,
-  notFound: 404,
+const API_STATUS_CODES = {
+  SUCCESS: 200,
+  NOT_FOUND: 404,
+  DUPLICATE_ENTRY: 409,
+  INTERNAL_SERVER_ERROR: 500,
 };
-const ResponseMessages = {
-  success: "Operation Succesfull",
-  error: "Couldn't Perform The Opertaion",
-  invalid: "Data Not Found",
+const RESPONSE_MESSAGES = {
+  SUCCESS: "Operation Succesfull",
+  ERROR: "Couldn't Perform The Operation",
+  INVALID: "Data Not Found",
+  DUPLICATE: "Duplicate Entry",
 };
-const Statuses = {
-  active: "active",
-  inactive: "inactive",
+const STATUSES = {
+  ACTIVE: "active",
+  INACTIVE: "inactive",
 };
-module.exports = { ResponseMessages, Statuses, statusCodes };
+module.exports = { RESPONSE_MESSAGES, STATUSES, API_STATUS_CODES };

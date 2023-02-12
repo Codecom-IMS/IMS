@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let attendanceModel = new mongoose.Schema({
+const attendanceModel = new mongoose.Schema({
   att_id: {
     type: Number,
     required: true,
