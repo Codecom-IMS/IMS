@@ -152,7 +152,7 @@ class AdminControllers {
       logger.error(`${status.error}An error occured while updating fee`);
     }
   }
-  static async adminLogin(req, res) => {
+  static async adminLogin(req, res) {
   try {
     const { email, password } = req.body;
     console.log("userCredentials", email, password);

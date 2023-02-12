@@ -1,4 +1,4 @@
-const Teacher = require("../../models/mongoModel/teachers");
+const Teacher = require("../../models/MongoModel/teachers");
 class TeacherRepository {
   static async teacherLogin(email, password) {
     try {
