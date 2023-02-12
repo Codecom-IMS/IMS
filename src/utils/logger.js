@@ -8,10 +8,10 @@ format: format.combine(format.timestamp({
     format: 'dddd, DD-MM-YYYY HH:mm:ss A'
 }), format.json()),
 
-defaultMeta: { service: 'IMS-Services' },
+defaultMeta: { service: 'IMS-backend' },
 transports: [
 new winston.transports.File({ filename: 'error.log', level: 'error' }),
-new winston.transports.File({ filename: 'info.log' , level: 'info'})
+new winston.transports.File({ filename: 'combined.log' , level: 'info'})
 ]
 });
 
@@ -35,11 +35,5 @@ message: message
 });
 };
 
-logger.warn = (message) => {
-logger.log({
-level: 'warn',
-message: message
-});
-};
 
 module.exports = logger;

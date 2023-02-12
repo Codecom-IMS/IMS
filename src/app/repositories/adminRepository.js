@@ -1,11 +1,11 @@
 const fee_details = require("../../models/fee_details");
-const students = require("../../models/students");
+const student = require("../../models/students");
 const ifArrearsExists = require("../../utils/if_arrears_exists");
 
-class UserRepository {
+class AdminRepository {
   static async getSudentFeeDetails(roll_number) {
     try {
-      const details = await students.find(
+      const details = await student.find(
         { roll_number: roll_number },
         {
           student_name: 1,
@@ -41,7 +41,7 @@ class UserRepository {
   }
   static async updateStudentStatus(rollNumberToFind) {
     try {
-      await students.updateOne(
+      await student.updateOne(
         { roll_number: rollNumberToFind },
         { $set: { fee_status: "paid" } }
       );
@@ -60,7 +60,7 @@ class UserRepository {
   }
   static async updateStudentsFeeInDB() {
     try {
-      const unpaidStudents = await students.find(
+      const unpaidStudents = await student.find(
         { fee_status: "upaid" },
         {
           roll_number: 1,
@@ -95,4 +95,4 @@ class UserRepository {
     }
   }
 }
-module.exports = UserRepository;
+module.exports = AdminRepository;

@@ -1,6 +1,6 @@
-const UserController = require("../controllers/UserController");
+const AdminControllers = require("../controllers/adminController");
 const routes = require("express").Router;
 const Router = routes();
-Router.get("/feeDetails", UserController.getSudentFeeDetails);
-Router.post("/addFee", UserController.addFee);
+Router.get("/feeDetails", AdminControllers.getSudentFeeDetails);
+Router.post("/feeDetails", AdminControllers.addFee);
 module.exports = Router;

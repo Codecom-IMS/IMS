@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongoConnection = () => {
-  const username = "Nabeel_Irfan";
-  const password = "nabeelirfan123456";
+  const username = "Codecom_IMS";
+  const password = "codecom123456789";
   const cluster = "Cluster0";
   const dbname = "IMS";
   const URI = `mongodb+srv://${username}:${password}@${cluster}.ss7h6l6.mongodb.net/${dbname}?retryWrites=true&w=majority`;

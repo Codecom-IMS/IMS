@@ -1,19 +1,17 @@
-const student = require("../models/students");
-const feeDetail = require("../models/fee_details");
-const UserServices = require("../app/services/userServices");
+const AdminServices = require("../app/services/AdminServices");
 const ifArrearsExists = require("../utils/if_arrears_exists");
 const DateFormat = require("../utils/dateFormat");
 const logger = require("../utils/logger");
-const status = require("../constants/constant")
+const {status} = require("../constants/constant")
 
-class UserController {
+class AdminControllers {
   static async getSudentFeeDetails(req, res) {
     try {
       let rollNumberToFind = req.query.roll_number;
-      const studentDetails = await UserServices.getSudentFeeDetails(
+      const studentDetails = await AdminServices.getSudentFeeDetails(
         rollNumberToFind
       );
-      const PrevArrears = await UserServices.getPrevArrears(rollNumberToFind);
+      const PrevArrears = await AdminServices.getPrevArrears(rollNumberToFind);
       logger.info(`${status.success} Student Details Received`);
       res.send({ studentDetails, PrevArrears });
     } catch (error) {
@@ -25,12 +23,12 @@ class UserController {
     try {
       console.log(rollNumberToFind);
       var rollNumberToFind = req.body.roll_number;
-      const PrevArrears = await UserServices.getPrevArrears(rollNumberToFind);
-      const studentDetails = await UserServices.getSudentFeeDetails(
+      const PrevArrears = await AdminServices.getPrevArrears(rollNumberToFind);
+      const studentDetails = await AdminServices.getSudentFeeDetails(
         rollNumberToFind
       );
 
-      const totalLength = await UserServices.totalLength();
+      const totalLength = await AdminServices.totalLength();
       const details = {
         id: totalLength,
         student_name: studentDetails.student_name,
@@ -43,8 +41,8 @@ class UserController {
       };
 
       const newDetails = ifArrearsExists(PrevArrears, details);
-      await UserServices.updateStudentStatus(rollNumberToFind);
-      await UserServices.pushFeeDetails(newDetails);
+      await AdminServices.updateStudentStatus(rollNumberToFind);
+      await AdminServices.pushFeeDetails(newDetails);
       logger.info(`${status.success} Student Fee Added Succesfuly`);
       res.json({ status: 200, message: "Operation Succesfull" });
     } catch (error) {
@@ -52,7 +50,7 @@ class UserController {
     }
   }
   static async updateFee() {
-    const status = await UserServices.updateStudentsFee();
+    const status = await AdminServices.updateStudentsFee();
     if (status) {
       logger.info(`${status.success} fee Updated`);
     } else {
@@ -60,4 +58,4 @@ class UserController {
     }
   }
 }
-module.exports = UserController;
+module.exports = AdminControllers;

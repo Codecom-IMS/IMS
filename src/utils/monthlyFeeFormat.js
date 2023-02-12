@@ -1,4 +1,4 @@
-const { updateFee } = require("../controllers/UserController");
+const { updateFee } = require("../controllers/AdminController");
 
 const updateAllStudentsFee = async () => {
   await updateFee();

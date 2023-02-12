@@ -1,9 +1,10 @@
-const UserRepository = require("../repositories/UserRepository");
+const adminRepository = require("../repositories/adminRepository");
 
-class UserServices {
+class AdminServices {
   static async getSudentFeeDetails(roll_number) {
     try {
-      const result = await UserRepository.getSudentFeeDetails(roll_number);
+      const result = await adminRepository.getSudentFeeDetails(roll_number);
+
       return result;
     } catch (error) {
       throw error;
@@ -11,7 +12,7 @@ class UserServices {
   }
   static async getPrevArrears(roll_number) {
     try {
-      const result = await UserRepository.getPrevArrears(roll_number);
+      const result = await adminRepository.getPrevArrears(roll_number);
       return result;
     } catch (error) {
       throw error;
@@ -19,7 +20,7 @@ class UserServices {
   }
   static async getStudentDetails(roll_number, object) {
     try {
-      const result = await UserRepository.getStudentDetails(roll_number);
+      const result = await adminRepository.getStudentDetails(roll_number);
       return result;
     } catch (error) {
       throw error;
@@ -27,21 +28,21 @@ class UserServices {
   }
   static async pushFeeDetails(details) {
     try {
-      await UserRepository.pushFeeDetails(details);
+      await adminRepository.pushFeeDetails(details);
     } catch (error) {
       throw error;
     }
   }
   static async updateStudentStatus(rollNumberToFind) {
     try {
-      await UserRepository.updateStudentStatus(rollNumberToFind);
+      await adminRepository.updateStudentStatus(rollNumberToFind);
     } catch (error) {
       throw error;
     }
   }
   static async totalLength() {
     try {
-      const result = await UserRepository.totalLength();
+      const result = await adminRepository.totalLength();
       return result;
     } catch (error) {
       throw error;
@@ -49,10 +50,10 @@ class UserServices {
   }
   static async updateStudentsFee() {
     try {
-      return await UserRepository.updateStudentsFeeInDB();
+      return await adminRepository.updateStudentsFeeInDB();
     } catch (error) {
       throw error;
     }
   }
 }
-module.exports = UserServices;
+module.exports = AdminServices;
