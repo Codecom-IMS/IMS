@@ -1,8 +1,0 @@
-{"level":"info","message":"Server now listening at localhost:5000","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:17:40 AM"}
-{"level":"error","message":"Connection with the Mongodb Unsuccesful","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:18:51 AM"}
-{"level":"info","message":"Server now listening at localhost:5000","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:19:04 AM"}
-{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:19:08 AM"}
-{"level":"error","message":"404: Data Not Found","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:23:54 AM"}
-{"level":"error","message":"409: Duplicate Entry","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:24:48 AM"}
-{"level":"info","message":"Server now listening at localhost:5000","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:28:33 AM"}
-{"level":"info","message":"Connection with Mongodb Succesfull","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:28:36 AM"}

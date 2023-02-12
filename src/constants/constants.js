@@ -9,9 +9,12 @@ const RESPONSE_MESSAGES = {
   ERROR: "Couldn't Perform The Operation",
   INVALID: "Data Not Found",
   DUPLICATE: "Duplicate Entry",
+  AUTHORIZATION_FAILED: "Authorization Failed",
+  ERROR_MESSAGE: "Something Went Wrong"
 };
 const STATUSES = {
   ACTIVE: "active",
   INACTIVE: "inactive",
 };
 module.exports = { RESPONSE_MESSAGES, STATUSES, API_STATUS_CODES };
+

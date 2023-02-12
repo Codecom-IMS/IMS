@@ -1,3 +1,0 @@
-{"level":"error","message":"Connection with the Mongodb Unsuccesful","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:18:51 AM"}
-{"level":"error","message":"404: Data Not Found","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:23:54 AM"}
-{"level":"error","message":"409: Duplicate Entry","service":"IMS-Backend","timestamp":"Sunday, 12-02-2023 05:24:48 AM"}

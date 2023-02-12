@@ -1,8 +1,9 @@
 const winston = require("winston");
 
-const { transports, createLogger, format } = require("winston");
 
-const logger = createLogger({
+const { format } = require("winston");
+
+const logger = winston.createLogger({
   level: "info",
   format: format.combine(
     format.timestamp({
@@ -12,16 +13,10 @@ const logger = createLogger({
   ),
   defaultMeta: { service: "IMS-Backend" },
   transports: [
-    new transports.File({ filename: "error.log", level: "error" }),
-    new transports.File({ filename: "combined.log", level: "info" }),
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "combined.log", level: "info" }),
   ],
 });
-
-logger.add(
-  new winston.transports.Console({
-    format: winston.format.simple(),
-  })
-);
 
 logger.info = (message) => {
   logger.log({
