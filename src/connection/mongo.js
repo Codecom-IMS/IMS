@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
+const logger = require("../utils/logger");
+
 const mongoConnection = () => {
-  const username = "Codecom_IMS";
+  const userName = "Codecom_IMS";
   const password = "codecom123456789";
   const cluster = "Cluster0";
-  const dbname = "IMS";
-  const URI = `mongodb+srv://${username}:${password}@${cluster}.ss7h6l6.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+  const dbName = "IMS";
+  const URI = `mongodb+srv://${userName}:${password}@${cluster}.ss7h6l6.mongodb.net/${dbName}?retryWrites=true&w=majority`;
   mongoose.connect(URI, (error) => {
     if (error) {
-      console.log("Connection with the Mongodb Unsuccesful");
+      logger.error("Connection with the Mongodb Unsuccesful");
       throw error;
     }
-    console.log("Connection with Mongodb Succesfull");
+    logger.info("Connection with Mongodb Succesfull");
   });
 };
 module.exports = mongoConnection;
