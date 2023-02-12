@@ -2,6 +2,19 @@ const AdminControllers = require("../controllers/adminController");
 
 const adminRoutes = require("express").Router();
 
+adminRoutes.get(
+  "/getOneStudentAttendance",
+  AdminControllers.getOneStudentAttendance
+);
+adminRoutes.get("/getClassAttendance", AdminControllers.getClassAttendance);
+adminRoutes.get(
+  "/getOneStudentFeeReport",
+  AdminControllers.getOneStudentFeeReport
+);
+adminRoutes.get(
+  "/getWholeClassFeeReport",
+  AdminControllers.getWholeClassFeeReport
+);
 adminRoutes.get("/getStudents", AdminControllers.getStudent);
 adminRoutes.put("/updateStudent/:rollNumber", AdminControllers.updateStudent);
 adminRoutes.post("/addStudent", AdminControllers.addStudent);

@@ -1,8 +1,8 @@
 const mongoConnection = require("../connection/mongo.js");
 
-class Connections {
-  static buildConnections() {
+class Connection {
+  static buildConnection() {
     mongoConnection();
   }
 }
-module.exports = Connections;
+module.exports = Connection;
