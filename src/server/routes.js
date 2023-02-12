@@ -1,4 +1,5 @@
 const app = require("./expressApp");
+
 const adminRoutes = require("../routes/admin");
 const userRoutes = require("../routes/userRoutes");
 app.use("/api/teacher/attendancePage", userRoutes);

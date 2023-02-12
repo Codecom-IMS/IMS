@@ -12,4 +12,7 @@ adminRoutes.post("/addTeacher", AdminControllers.addTeacher);
 adminRoutes.put("/updateTeacher/:id", AdminControllers.updateTeacher);
 adminRoutes.delete("/deleteTeacher", AdminControllers.deleteTeacher);
 
+adminRoutes.get("/feeDetails", AdminControllers.getSudentFeeDetails);
+adminRoutes.post("/feeDetails", AdminControllers.addFee);
+
 module.exports = adminRoutes;

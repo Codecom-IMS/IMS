@@ -43,6 +43,60 @@ class AdminServices {
     const teacherId = apiRequest.query.id;
     return await AdminRepository.deleteTeacherFromDB(teacherId);
   };
+  static async getSudentFeeDetails(roll_number) {
+    try {
+      const result = await AdminRepository.getSudentFeeDetails(roll_number);
+
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async getPrevArrears(roll_number) {
+    try {
+      const result = await AdminRepository.getPrevArrears(roll_number);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async getStudentDetails(roll_number, object) {
+    try {
+      const result = await AdminRepository.getStudentDetails(roll_number);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async pushFeeDetails(details) {
+    try {
+      await AdminRepository.pushFeeDetails(details);
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async updateStudentStatus(rollNumberToFind) {
+    try {
+      await AdminRepository.updateStudentStatus(rollNumberToFind);
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async totalLength() {
+    try {
+      const result = await AdminRepository.totalLength();
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async updateStudentsFee() {
+    try {
+      return await AdminRepository.updateStudentsFeeInDB();
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = AdminServices;
