@@ -30,12 +30,4 @@ logger.error = (message) => {
     message: message,
   });
 };
-
-logger.warn = (message) => {
-  logger.log({
-    level: "warn",
-    message: message,
-  });
-};
-
 module.exports = logger;

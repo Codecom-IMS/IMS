@@ -1,9 +1,10 @@
 const app = require("./expressApp");
-
-const adminRoutes = require("../routes/admin");
 const teacherRoutes = require("../routes/teacher");
-
-app.use("/api/admin/", adminRoutes);
+const adminRoutes = require("../routes/admin");
+const userRoutes = require("../routes/userRoutes");
+app.use("/api/teacher/attendancePage", userRoutes);
+app.use("/api/admin/attendancePage", userRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/teacher/", teacherRoutes);
 
 module.exports = app;

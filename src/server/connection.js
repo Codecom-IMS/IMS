@@ -1,4 +1,4 @@
-const mongoConnection = require("../connection/mongo");
+const mongoConnection = require("../connection/mongo.js");
 
 class Connections {
   static buildConnections() {
