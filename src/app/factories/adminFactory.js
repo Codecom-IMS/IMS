@@ -11,7 +11,7 @@ class AdminFactory {
         return {
           status: 200,
           token,
-          id:response.id,
+          id: response.id,
           admin_name: response.admin_name,
           adminId: response.id,
           email: response.email,

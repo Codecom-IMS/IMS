@@ -11,7 +11,7 @@ class TeacherFactory {
         return {
           status: 200,
           token,
-          id:data._id,
+          id: data._id,
           name: data.name,
           teacherId: data.id,
           email: data.email,
