@@ -15,5 +15,4 @@ const mongoConnection = () => {
     logger.info("Connection with Mongodb Succesfull");
   });
 };
-
 module.exports = mongoConnection;

@@ -1,5 +1,6 @@
 const winston = require("winston");
 
+
 const { format } = require("winston");
 
 const logger = winston.createLogger({
@@ -30,12 +31,4 @@ logger.error = (message) => {
     message: message,
   });
 };
-
-logger.warn = (message) => {
-  logger.log({
-    level: "warn",
-    message: message,
-  });
-};
-
 module.exports = logger;

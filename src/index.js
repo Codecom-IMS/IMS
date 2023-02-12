@@ -8,8 +8,9 @@ const { updateAllStudentsFeeStatus } = require('./utils/student');
 const logger = require('./utils/logger');
 
 server.listen(config.port,()=>{
-    logger.info("Backend Server Started")
+    logger.info(`Server now listening at localhost:${config.port}`);
 });
 nodeSchedule.scheduleJob('1 08 1 */1 *',async ()=>{
     await updateAllStudentsFeeStatus();
 });
+
