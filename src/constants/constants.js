@@ -1,0 +1,37 @@
+const API_STATUS_CODES = {
+  SUCCESS: 200,
+  NOT_FOUND: 404,
+  AUTHORIZATION_FAILED: 401,
+  ERROR_CODE: 400,
+  INTERNAL_SERVER_ERROR: 500,
+   DUPLICATE_ENTRY: 409,
+  INTERNAL_SERVER_ERROR: 500,
+};
+const RESPONSE_MESSAGES = {
+  SUCCESS: "Operation Successful",
+  AUTHORIZATION_FAILED: "Authorization failed",
+  INVALID: "Data Not Found",
+  ERROR: "Couldn't Perform The Operation",
+  DUPLICATE: "Duplicate Entry",
+  ERROR_MESSAGE: "Something Went Wrong",
+};
+const STATUSES = {
+  ACTIVE: "active",
+  INACTIVE: "inactive",
+};
+const CONTROLLER_ERROR = {
+  status: API_STATUS_CODES.INTERNAL_SERVER_ERROR,
+  message: "Internal server error.",
+};
+const INVALID_REQUEST = {
+  status: API_STATUS_CODES.ERROR_CODE,
+  message: "Invalid request.",
+};
+const AUTHORIZATION_FAILED = {
+  status: API_STATUS_CODES.AUTHORIZATION_FAILED,
+  message: "Authorization failed.",
+};
+const ACCESS_TOKEN_SECRET =
+  "678f6a3db6bb457d279942049663b2af6b8de319652b64d6ab5b3d695cb9c8ea9f2133e2920e837497d3fb7c831ef6d6043735b3d695cb9c8ea9f2133e2920e8890ffff670d99a1a9a3a43683";
+
+module.exports = { API_STATUS_CODES, RESPONSE_MESSAGES, ACCESS_TOKEN_SECRET, STATUSES, CONTROLLER_ERROR,INVALID_REQUEST,AUTHORIZATION_FAILED };
