@@ -1,4 +1,4 @@
-function ifArrearsExists(PrevArrears, details) {
+const ifArrearsExists = (PrevArrears, details)=> {
   if (PrevArrears) {
     const fee = parseInt(details.basic_fee);
     const others = parseInt(details.others);

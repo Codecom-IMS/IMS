@@ -3,17 +3,17 @@ const config = require("../../config/config");
 const {ACCESS_TOKEN_SECRET} = require("../../constants/constants")
 
 class TeacherFactory {
-  static async teacherLogin(data) {
+  static async teacherLogin(response) {
     try {
-      if (data) {
-        const token = jwt.sign(data.email, ACCESS_TOKEN_SECRET);
+      if (response) {
+        const token = jwt.sign({email:response.email,role:"teacher"}, ACCESS_TOKEN_SECRET);
         return {
           status: 200,
           token,
-          id: data._id,
-          name: data.name,
-          teacherId: data.id,
-          email: data.email,
+          id: response._id,
+          name: response.name,
+          teacherId: response.id,
+          email: response.email,
         };
       } else {
         const respose = { status: 404, message: "Invalid Email or Password" };

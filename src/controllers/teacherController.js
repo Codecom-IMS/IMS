@@ -11,11 +11,13 @@ exports.teacherLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
     const teachers = await TeacherService.teacherLogin(email, password);
+    logger.info("Successfully Teacher Logged In");
     if (teachers.status === API_STATUS_CODES.SUCCESS) {
       res.json({
         data: teachers,
       });
     } else {
+      logger.info("Teacher Login Failed");
       res.json({ teachers });
     }
   } catch (error) {

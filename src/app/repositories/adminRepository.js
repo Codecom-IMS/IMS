@@ -63,11 +63,13 @@ class AdminRepository {
       return false;
     }
   };
-  static getTeachersFromDB = async (teacherId) => {
+  static getTeachersFromDB = async (teacherId, email) => {
     let teachers;
     try {
       teachers = teacherId
         ? await Teacher.findOne({ id: teacherId })
+        : email
+        ? await Teacher.findOne({ email: email })
         : await Teacher.find({});
       logger.info("Teacher Get Successful");
       return teachers;

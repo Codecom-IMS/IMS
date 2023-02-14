@@ -5,7 +5,6 @@ class TeacherServices {
     try {
       const result = await TeacherRepository.teacherLogin(email, password);
       const data = await TeacherFactory.teacherLogin(result);
-      console.log(data)
       return data;
     } catch (error) {
       throw error;

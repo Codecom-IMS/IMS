@@ -1,13 +1,12 @@
 const jwt = require("jsonwebtoken");
 const config = require("../../config/config");
-const ACCESS_TOKEN_SECRET = config.secret;
+const {ACCESS_TOKEN_SECRET} = require("../../constants/constants")
 
 class AdminFactory {
   static async adminLogin(response) {
     try {
       if (response) {
-        console.log(response);
-        const token = jwt.sign(response.email, ACCESS_TOKEN_SECRET);
+        const token = jwt.sign({email:response.email,role:"admin"}, ACCESS_TOKEN_SECRET);
         return {
           status: 200,
           token,

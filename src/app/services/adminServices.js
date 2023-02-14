@@ -1,7 +1,8 @@
 const AdminRepository = require("../repositories/adminRepository");
 const AdminFactory = require("../factories/adminFactory");
 const dateCheck = require("../../utils/dateCheck");
-
+const ifArrearsExists = require("../../utils/if_arrears_exists");
+const dateFormat = require("../../utils/dateFormat");
 class AdminServices {
   static getStudents = async (apiRequest) => {
     const rollNumber = apiRequest.query.roll_number;
@@ -27,7 +28,8 @@ class AdminServices {
   };
   static getTeachers = async (apiRequest) => {
     const teacherId = apiRequest.query.id;
-    return await AdminRepository.getTeachersFromDB(teacherId);
+    const teacherEmail = apiRequest.query.email
+    return await AdminRepository.getTeachersFromDB(teacherId,teacherEmail);
   };
 
   static addTeacherData = async (apiRequest) => {
@@ -70,31 +72,26 @@ class AdminServices {
       throw error;
     }
   }
-  static async pushFeeDetails(details) {
+  static async addFee(rollNumberToFind, current_paid_fee) {
     try {
-      await AdminRepository.pushFeeDetails(details);
-    } catch (error) {
-      throw error;
-    }
-  }
-  static async updateStudentStatus(rollNumberToFind) {
-    try {
+      const PrevArrears = await AdminRepository.getPrevArrears(rollNumberToFind);
+      const studentDetails = await AdminRepository.getSudentFeeDetails(
+        rollNumberToFind
+      );
+      const totalLength = await AdminRepository.totalLength();
+      const details = {
+        id: totalLength,
+        student_name: studentDetails[0].student_name,
+        student_id: studentDetails[0].roll_number,
+        basic_fee: studentDetails[0].basic_fee,
+        current_paid_fee,
+        others: studentDetails[0].others,
+        class: studentDetails[0].class,
+        date: dateFormat()
+      };
+      const newDetails = ifArrearsExists(PrevArrears, details);
       await AdminRepository.updateStudentStatus(rollNumberToFind);
-    } catch (error) {
-      throw error;
-    }
-  }
-  static async totalLength() {
-    try {
-      const result = await AdminRepository.totalLength();
-      return result;
-    } catch (error) {
-      throw error;
-    }
-  }
-  static async updateStudentsFee() {
-    try {
-      return await AdminRepository.updateStudentsFeeInDB();
+      await AdminRepository.pushFeeDetails(newDetails);
     } catch (error) {
       throw error;
     }

@@ -1,5 +1,4 @@
 const AdminControllers = require("../controllers/adminController");
-
 const adminRoutes = require("express").Router();
 
 adminRoutes.get(
